@@ -9,3 +9,6 @@ Thumbs.db
 *.pdf
 *.docx
 *.zip
+# 例外：スキルに入れる空の書式（公開前チェックで中身を確認する）
+!plugins/*/skills/*/assets/resume-template.xlsm
+!plugins/*/skills/*/assets/career-template.docx

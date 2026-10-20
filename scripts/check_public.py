@@ -16,6 +16,12 @@ REPO = pathlib.Path(__file__).resolve().parent.parent
 # 置いてよいファイルの種類。表計算・PDF・文書・画像などは求職者情報が入りうるので置かない
 ALLOWED_EXT = {".md", ".json", ".py", ".yaml", ".yml", ".svg", ".txt", ".gitignore", ""}
 MAX_BYTES = 300_000
+# 例外として置いてよい書式ファイル（空の記入用紙のみ）。中のXMLも下のチェックにかける
+ALLOWED_TEMPLATES = {
+    "plugins/choice-aid-application-documents/skills/choice-aid-application-documents/assets/resume-template.xlsm",
+    "plugins/choice-aid-application-documents/skills/choice-aid-application-documents/assets/career-template.docx",
+}
+OFFICE_AUTHOR = re.compile(r"<(dc:creator|cp:lastModifiedBy|Company|Manager)>([^<]+)</")
 
 # スキルが書き込み・参照する本番シートのIDだけは公開してよい（共有が社内に限られているため。2026-10-21判断）
 ALLOWED_DRIVE_IDS = {
@@ -80,11 +86,29 @@ def main():
         rel = p.relative_to(REPO).as_posix()
         if any(ord(c) > 127 for c in rel):
             problems.append(f"{rel}: ファイル名に英数字以外がある（Claudeの登録エラーの原因）")
+        if p.stat().st_size > MAX_BYTES:
+            problems.append(f"{rel}: ファイルが大きすぎる（{p.stat().st_size:,}バイト）")
+        if rel in ALLOWED_TEMPLATES:
+            # Office形式はZIPの中のXMLを読む。作成者などのメタ情報に実名が残りやすい
+            import zipfile
+            with zipfile.ZipFile(p) as z:
+                parts = [(n, z.read(n).decode("utf-8", "replace")) for n in z.namelist() if n.endswith(".xml")]
+            if any(n.endswith("vbaProject.bin") for n in zipfile.ZipFile(p).namelist()):
+                problems.append(f"{rel}: マクロが入っている")
+            for n, xml in parts:
+                for m in OFFICE_AUTHOR.finditer(xml):
+                    problems.append(f"{rel}（{n}）: 作成者などの情報「{m.group(2)}」が残っている")
+                body = re.sub(r"<[^>]+>", " ", xml)
+                for w in deny:
+                    if w in body:
+                        problems.append(f"{rel}（{n}）: 禁止語「{w}」")
+                for label, pat in PATTERNS:
+                    for m in pat.finditer(body):
+                        problems.append(f"{rel}（{n}）: {label}「{m.group(0)}」")
+            continue
         if p.suffix.lower() not in ALLOWED_EXT and p.name != ".gitignore":
             problems.append(f"{rel}: 置いてはいけない種類のファイル（{p.suffix}）。求職者の資料などが紛れていないか確認")
             continue
-        if p.stat().st_size > MAX_BYTES:
-            problems.append(f"{rel}: ファイルが大きすぎる（{p.stat().st_size:,}バイト）")
         if rel in {"scripts/check_public.py"}:
             continue  # このファイル自体はパターンを書いているので対象外
         text = p.read_text(encoding="utf-8", errors="replace")

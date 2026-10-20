@@ -11,6 +11,11 @@
       "name": "choice-aid-interview-fb",
       "source": "./plugins/choice-aid-interview-fb",
       "description": "面接・CA面談の資料から、統一評価（8項目100点）の採点・FB・求職者プロファイルを作り、全CA共通の「中途人材紹介_AI面談FB」シートへ追記する"
+    },
+    {
+      "name": "choice-aid-application-documents",
+      "source": "./plugins/choice-aid-application-documents",
+      "description": "求職者のレジュメ・面接メモ・CAメモ・求職者管理表から、会社指定の書式で履歴書（Googleスプレッドシート）と職務経歴書（Googleドキュメント）の確認用ドラフトを作る"
     }
   ]
 }

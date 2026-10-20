@@ -7,6 +7,7 @@ choice aid の業務で使う Claude 用スキル集です（プラグインの�
 | プラグイン | できること |
 |---|---|
 | `choice-aid-interview-fb` | 面接・CA面談の資料（Gemini議事録・逐語録、Indeedレジュメ、手打ちメモ）から、統一評価（8項目100点）の採点、面接官へのFB、求職者プロファイルを作り、全CA共通の「中途人材紹介_AI面談FB」シートへ追記する |
+| `choice-aid-application-documents` | 同じ資料と求職者管理表から、会社指定の書式で履歴書（Googleスプレッドシート）と職務経歴書（Googleドキュメント）の確認用ドラフトを作る |
 
 ## 入れ方（1回だけ）
 
@@ -14,7 +15,7 @@ Claude（ブラウザ・デスクトップアプリ）で:
 
 1. 設定 → カスタマイズ → **プラグイン** → **＋追加** → **マーケットプレイスを追加** → **リポジトリから追加**
 2. URL欄にこのリポジトリの `owner/repo` を入れて追加する
-3. 一覧に出た `choice-aid-interview-fb` をインストールする
+3. 一覧に出たプラグイン（`choice-aid-interview-fb`、`choice-aid-application-documents`）をそれぞれ「追加」する
 4. 「自動で同期」をオンにしておくと、更新が自動で届く
 
 Claude Code では `/plugin marketplace add <owner/repo>` → `/plugin install choice-aid-interview-fb@choice-aid-skills`。

@@ -1,7 +1,7 @@
 {
   "name": "choice-aid-interview-fb",
   "description": "面接・CA面談の資料から、統一評価（8項目100点）の採点・FB・求職者プロファイルを作り、全CA共通の「中途人材紹介_AI面談FB」シートへ追記する",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "author": {
     "name": "choice aid AI推進"
   }

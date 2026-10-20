@@ -1,0 +1,3 @@
+#!/bin/sh
+# コミットの前に公開前チェックを実行する。禁止語の一覧の場所は git config choiceaid.denylist に入れておく
+exec py -3 "$(git rev-parse --show-toplevel)/scripts/check_public.py" --denylist "$(git config choiceaid.denylist)"

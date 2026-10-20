@@ -1,0 +1,16 @@
+{
+  "name": "choice-aid-skills",
+  "owner": {
+    "name": "choice aid AI推進"
+  },
+  "metadata": {
+    "description": "choice aid の業務で使う Claude 用スキル集"
+  },
+  "plugins": [
+    {
+      "name": "choice-aid-interview-fb",
+      "source": "./plugins/choice-aid-interview-fb",
+      "description": "面接・CA面談の資料から、統一評価（8項目100点）の採点・FB・求職者プロファイルを作り、全CA共通の「中途人材紹介_AI面談FB」シートへ追記する"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+# 求職者の資料などを誤って入れないため
+*.xlsx
+*.xls
+*.csv
+*.pdf
+*.docx
+*.zip

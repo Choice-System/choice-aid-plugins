@@ -1,0 +1,13 @@
+# 設定の控え（AIが毎回読むものではない。手順の正本は SKILL.md と references/）
+# 編集には各自のGoogle接続と権限が必要
+operation_mode: "single_shared_sheet_for_all_CAs"
+spreadsheet_name: "中途人材紹介_AI面談FB"
+spreadsheet_url: "https://docs.google.com/spreadsheets/d/1dIJ5reidWBJqUL76bwY77kHvoKPfJWXTwj940-aYJFg/edit"
+candidate_management_file_id: "1AkIYX56cig3FxCetRC5YzHBONXTBZQ6gbQF_pW5W8o8"  # 求職者管理表（読み取り専用）
+score_master_sheet: "統一評価_採点マスター"
+score_master_version: "Ver.1.0"
+id_rule_version: "1.0"  # references/id-rules.md
+skill_version: "1.3"
+all_cas_write_same_original: true
+include_real_candidates_in_skill_files: false
+redact_personal_contacts_from_feedback: true

@@ -32,6 +32,7 @@ Claude Code では `/plugin marketplace add <owner/repo>` → `/plugin install c
 
 - スキルの正本はこのリポジトリの外にあり、ビルドでここへ反映します。ここを直接書き換えないでください。
 - 反映のたびに `plugins/*/.claude-plugin/plugin.json` の `version` が上がります。version が変わらないと利用者に更新が届きません。
+- 利用者への更新は、main への push をきっかけに Claude GitHub App 経由で同期されます（組織 Choice-System でこのリポジトリへのアクセスを許可済み）。
 - コミット・プッシュの前に公開前チェック（`scripts/check_public.py`）が自動で動きます。初回だけ次を設定してください:
   - `git config core.hooksPath .githooks`
   - `git config choiceaid.denylist <禁止語の一覧ファイルの場所>`（一覧は手元にだけ置き、このリポジトリには入れない）

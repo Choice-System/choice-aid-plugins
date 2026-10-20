@@ -1,4 +1,4 @@
-# choice-aid-skills
+# choice-aid-plugins
 
 choice aid の業務で使う Claude 用スキル集です（プラグインのマーケットプレイス形式）。
 
@@ -18,7 +18,7 @@ Claude（ブラウザ・デスクトップアプリ）で:
 3. 一覧に出たプラグイン（`choice-aid-interview-fb`、`choice-aid-application-documents`）をそれぞれ「追加」する
 4. 「自動で同期」をオンにしておくと、更新が自動で届く
 
-Claude Code では `/plugin marketplace add <owner/repo>` → `/plugin install choice-aid-interview-fb@choice-aid-skills`。
+Claude Code では `/plugin marketplace add <owner/repo>` → `/plugin install choice-aid-interview-fb@choice-aid-plugins`。
 
 使うには、Claude の設定 → 機能 →「クラウドでのコード実行とファイル作成」がオンであること、Google Drive・Google Sheets のコネクタがつながっていること、対象シートへの編集権限があることが必要です。
 

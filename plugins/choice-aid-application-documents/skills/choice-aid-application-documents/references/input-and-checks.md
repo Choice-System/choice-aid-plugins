@@ -34,7 +34,7 @@ python scripts/extract_candidate_management.py 管理表.xlsx '求職者名' '�
 python scripts/build_application_sources.py candidate.json output_dir
 ```
 
-必要なPythonライブラリ：`openpyxl`, `python-docx`, `Pillow`。写真抽出に `pdfimages`（Poppler）が必要。コードを使えないClaude Chatでは、テンプレート・元資料を添付して同じ入力項目と検証条件を指示し、Google形式に変換できなければXLSX/DOCXを受け取ってDriveで変換する。
+必要なPythonライブラリ：`openpyxl`, `python-docx`, `Pillow`。写真抽出に `pdfimages`（Poppler）が必要。コードを使えないClaude Chatでは、テンプレート・元資料を添付して同じ入力項目と検証条件を指示し、XLSX/DOCXを受け取り、チャットのファイルの「∨」→「Google Driveで開く」でGoogle形式にする。
 
 ## 確認
 

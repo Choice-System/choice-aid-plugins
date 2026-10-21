@@ -13,7 +13,7 @@ Claude Chat、Claude Cowork、Claude Code向けの**履歴書・職務経歴書�
 1. スキルが有効か確認する。Claude ChatまたはCoworkでは、`prompts/start-prompt.md` の文章を新しい会話に貼る。
 2. 求職者のIndeed等のレジュメPDF、Gemini面接メモ・逐語録、CA手打ちメモ、管理表の該当行を添付する。Driveに接続できるなら管理表の指定ファイルIDの現在版を読む。求人票がある場合は加える。
 3. 候補者名、担当CA、作成日を指示文へ入力する。書類を受け取ったら写真・氏名・メール・電話・年月を確認する。
-4. Google Driveへの作成権限がないClaudeでは、写真入りXLSXとDOCXを受け取る。担当者がGoogle DriveへアップロードしてそれぞれGoogleスプレッドシート／Googleドキュメントへ変換し、写真と印刷表示を再確認する。
+4. 写真入りXLSXとDOCXがチャットに出る。それぞれファイルの右の「∨」→「Google Driveで開く」を押すと、Googleスプレッドシート／Googleドキュメントとして自分のDriveに作られる。写真と印刷表示を確認する。
 5. 本人確認後、作成CAと別担当者のダブルチェックを済ませてから企業提出する。
 
 ## 3 Claude Code

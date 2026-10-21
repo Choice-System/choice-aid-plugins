@@ -1,7 +1,7 @@
 {
   "name": "choice-aid-application-documents",
   "description": "求職者のレジュメ・面接メモ・CAメモ・求職者管理表から、会社指定の書式で履歴書（Googleスプレッドシート）と職務経歴書（Googleドキュメント）の確認用ドラフトを作る",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "choice aid AI推進"
   }

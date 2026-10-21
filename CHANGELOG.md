@@ -2,6 +2,7 @@
 
 ## choice-aid-application-documents
 
+- 1.0.1（2026-10-21）：Googleスプレッドシート／ドキュメントへの変換を「Google Driveで開く」方式に変更（Claudeがファイルをbase64で送ると壊れて変換できないため）
 - 1.0.0（2026-10-21）：履歴書・職務経歴書の作成スキルを追加
 
 ## choice-aid-interview-fb
